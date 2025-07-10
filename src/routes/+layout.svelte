@@ -1,3 +1,46 @@
+<script>
+    import { goto } from "$app/navigation";
+    import { onMount } from "svelte";
+    import {
+        getAuth,
+        onAuthStateChanged,
+        signInWithPopup,
+        GoogleAuthProvider,
+        signOut,
+    } from "firebase/auth";
+    import { app } from "$lib/assets/js/firebase"; // Asegúrate de que este sea el path correcto
+    import { user } from "$lib/stores/user"; // Store reactiva
+
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    onMount(() => {
+        onAuthStateChanged(auth, (u) => {
+            user.set(u);
+        });
+    });
+
+    const login = async () => {
+        try {
+            await signInWithPopup(auth, provider);
+            goto("/calendario");
+            // el estado cambiará automáticamente gracias al `onAuthStateChanged`
+        } catch (err) {
+            console.error("Error al iniciar sesión:", err);
+        }
+    };
+
+    const logout = async () => {
+        try {
+            await signOut(auth);
+            user.set(null);
+            goto("/");
+        } catch (err) {
+            console.error("Error al cerrar sesión:", err);
+        }
+    };
+</script>
+
 <nav
     class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm"
 >
@@ -38,44 +81,32 @@
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                     >
-                        <i class="fas fa-briefcase-medical me-1"></i>
-                        Servicios
+                        <i class="fas fa-briefcase-medical me-1"></i>Servicios
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li>
                             <a class="dropdown-item" href="/consultas">
-                                <i class="fas fa-user-md me-2 text-success"></i>
-                                Consultas
+                                <i class="fas fa-user-md me-2 text-success"
+                                ></i>Consultas
                             </a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="/alimentos">
-                                <i class="fas fa-bone me-2 text-success"></i>
-                                Alimentos
+                                <i class="fas fa-bone me-2 text-success"
+                                ></i>Alimentos
                             </a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="/adopciones">
-                                <i class="fas fa-dog me-2 text-success"> </i>
-                                Adopciones
+                                <i class="fas fa-dog me-2 text-success"
+                                ></i>Adopciones
                             </a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="/cortes">
                                 <i
                                     class="fa-solid fa-scissors me-2 text-success"
-                                >
-                                </i>
-                                Estetica
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="/#calendario">
-                                <i
-                                    class="fas fa-calendar-alt me-2 text-success"
-                                >
-                                </i>
-                                Calendario
+                                ></i>Estética
                             </a>
                         </li>
                     </ul>
@@ -87,12 +118,31 @@
                     </a>
                 </li>
 
-                <!-- Nosotros -->
                 <li class="nav-item">
                     <a class="nav-link text-success fw-semibold" href="/team">
                         <i class="fas fa-users me-1"></i>Nosotros
                     </a>
                 </li>
+
+                <!-- Condición: Mostrar calendario solo si hay usuario -->
+                <div class="d-flex ms-auto">
+                    {#if $user}
+                        <a
+                            class="nav-link text-success fw-semibold"
+                            href="/calendario"
+                        >
+                            <i class="fas fa-calendar me-1"></i>
+                            Calendario
+                        </a>
+                        <button class="nav-link text-danger" on:click={logout}
+                            >Cerrar sesión</button
+                        >
+                    {:else}
+                        <button class="btn btn-primary" on:click={login}
+                            >Iniciar sesión</button
+                        >
+                    {/if}
+                </div>
             </ul>
         </div>
     </div>
