@@ -77,7 +77,11 @@
         </div>
 
         <div class="text-center mt-5">
-            <a href="/contacto" class="btn btn-success btn-lg">
+            <a
+                href="https://wa.me/+573113041496"
+                target="_blank"
+                class="btn btn-success btn-lg"
+            >
                 <i class="fas fa-shopping-basket me-2"></i>Consultar
                 disponibilidad
             </a>

@@ -15,7 +15,7 @@
         <div class="row align-items-center">
             <div class="col-md-6 mb-4 mb-md-0">
                 <img
-                    src="https://picsum.photos/600/400?random=6"
+                    src="https://www.clinicamedellin.com/v2_base/file_loader.php?id_file=23786-m21"
                     alt="Historia de PetLife"
                     class="img-fluid rounded shadow"
                 />
@@ -46,7 +46,7 @@
         <div class="row align-items-center">
             <div class="col-md-6 mb-4 mb-md-0">
                 <img
-                    src="https://picsum.photos/600/400?random=11"
+                    src="https://images.unsplash.com/photo-1596272875729-ed2ff7d6d9c5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmV0ZXJpbmFyaWF8ZW58MHx8MHx8fDA%3D"
                     alt="Visión PetLife"
                     class="img-fluid rounded shadow"
                 />
@@ -76,7 +76,7 @@
         <div class="row align-items-center flex-md-row-reverse">
             <div class="col-md-6 mb-4 mb-md-0">
                 <img
-                    src="https://picsum.photos/600/400?random=7"
+                    src="https://plus.unsplash.com/premium_photo-1661954422066-36639b6f13b5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dmV0ZXJpbmFyaWF8ZW58MHx8MHx8fDA%3D"
                     alt="Misión PetLife"
                     class="img-fluid rounded shadow"
                 />

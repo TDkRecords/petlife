@@ -61,6 +61,15 @@
                             </a>
                         </li>
                         <li>
+                            <a class="dropdown-item" href="/cortes">
+                                <i
+                                    class="fa-solid fa-scissors me-2 text-success"
+                                >
+                                </i>
+                                Estetica
+                            </a>
+                        </li>
+                        <li>
                             <a class="dropdown-item" href="/#calendario">
                                 <i
                                     class="fas fa-calendar-alt me-2 text-success"

@@ -126,7 +126,7 @@
                     Colaboramos con refugios locales para promover la adopción
                     de perros y gatos que buscan un hogar lleno de amor.
                 </p>
-                <a href="/#adopciones" class="btn btn-success mt-3 fw-semibold"
+                <a href="/adopciones" class="btn btn-success mt-3 fw-semibold"
                     ><i class="fas fa-paw me-2"></i>Ver animales en adopción</a
                 >
             </div>
@@ -144,7 +144,7 @@
             organizamos jornadas de vacunación y desparasitación comunitaria.
         </p>
         <div class="text-center mt-4">
-            <a href="/#calendario" class="btn btn-outline-success fw-semibold"
+            <a href="/calendario" class="btn btn-outline-success fw-semibold"
                 ><i class="fas fa-calendar-check me-2"></i>Solicitar turno</a
             >
         </div>
@@ -212,7 +212,7 @@
             Estamos aquí para ayudarte. Contáctanos por teléfono, WhatsApp o
             visítanos directamente.
         </p>
-        <a href="/#contacto" class="btn btn-success fw-semibold">
+        <a href="/contacto" class="btn btn-success fw-semibold">
             <i class="fas fa-phone-alt me-2"></i>Contactar ahora
         </a>
     </div>

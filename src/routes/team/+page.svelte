@@ -75,80 +75,100 @@
     </div>
 </section>
 
-<section class="py-5">
+<section class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center text-success fw-bold mb-5">
-            <i class="fas fa-people-group me-2"></i>Conoce al equipo
+        <h2 class="text-center fw-bold text-success mb-4">
+            <i class="fas fa-paw me-2"></i>Mascotas felices
         </h2>
-        <div class="row g-4">
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm text-center h-100">
+
+        <div
+            id="mascotasCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel"
+        >
+            <div class="carousel-inner rounded shadow">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
                     <img
-                        src="https://picsum.photos/300/300?random=21"
-                        class="card-img-top rounded-circle p-3"
-                        alt="Dra. Ana Gómez"
+                        src="https://plus.unsplash.com/premium_photo-1710406095492-7e62eba19745?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGV0fGVufDB8fDB8fHww"
+                        class="d-block w-100"
+                        alt="Mascota 1"
                     />
-                    <div class="card-body">
-                        <h5 class="fw-bold">Dra. Ana Gómez</h5>
-                        <p class="text-muted mb-1">Cirujana veterinaria</p>
+                    <div
+                        class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3"
+                    >
+                        <h5>Milo</h5>
                         <p>
-                            Especialista en traumatología animal con más de 10
-                            años de experiencia.
+                            Recuperado con cariño y atención tras una operación
+                            difícil.
                         </p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm text-center h-100">
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
                     <img
-                        src="https://picsum.photos/300/300?random=22"
-                        class="card-img-top rounded-circle p-3"
-                        alt="José Palacios"
+                        src="https://images.unsplash.com/photo-1570499312299-136c0ecbc69f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJhYnklMjBjYXR8ZW58MHx8MHx8fDA%3D"
+                        class="d-block w-100"
+                        alt="Mascota 2"
                     />
-                    <div class="card-body">
-                        <h5 class="fw-bold">José Palacios</h5>
-                        <p class="text-muted mb-1">Técnico veterinario</p>
+                    <div
+                        class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3"
+                    >
+                        <h5>Luna</h5>
                         <p>
-                            Apasionado por el comportamiento animal y el cuidado
-                            postoperatorio.
+                            Encontró un nuevo hogar gracias a nuestra campaña de
+                            adopción.
                         </p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm text-center h-100">
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
                     <img
-                        src="https://picsum.photos/300/300?random=23"
-                        class="card-img-top rounded-circle p-3"
-                        alt="María Elena Ríos"
+                        src="https://images.unsplash.com/photo-1685388376625-4c91795a4142?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGRvZ2d5fGVufDB8fDB8fHww"
+                        class="d-block w-100"
+                        alt="Mascota 3"
                     />
-                    <div class="card-body">
-                        <h5 class="fw-bold">María Elena Ríos</h5>
-                        <p class="text-muted mb-1">Recepcionista</p>
+                    <div
+                        class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3"
+                    >
+                        <h5>Max</h5>
                         <p>
-                            Siempre amable y eficiente, es la primera sonrisa
-                            que recibe a nuestros clientes.
+                            Disfrutando de su chequeo anual con nosotros desde
+                            2019.
                         </p>
                     </div>
                 </div>
+
+                <!-- Puedes seguir agregando más slides aquí -->
             </div>
-            <div class="col-md-3">
-                <div class="card border-0 shadow-sm text-center h-100">
-                    <img
-                        src="https://picsum.photos/300/300?random=24"
-                        class="card-img-top rounded-circle p-3"
-                        alt="Camila Vargas"
-                    />
-                    <div class="card-body">
-                        <h5 class="fw-bold">Camila Vargas</h5>
-                        <p class="text-muted mb-1">Adiestradora canina</p>
-                        <p>
-                            Experta en conducta y socialización, trabaja con
-                            adopciones y terapia animal.
-                        </p>
-                    </div>
-                </div>
-            </div>
+
+            <!-- Controles del carrusel -->
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#mascotasCarousel"
+                data-bs-slide="prev"
+            >
+                <span
+                    class="carousel-control-prev-icon bg-dark rounded-circle p-2"
+                    aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#mascotasCarousel"
+                data-bs-slide="next"
+            >
+                <span
+                    class="carousel-control-next-icon bg-dark rounded-circle p-2"
+                    aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
         </div>
     </div>
 </section>
