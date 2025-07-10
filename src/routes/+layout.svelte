@@ -61,12 +61,6 @@
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="/#estetica">
-                                <i class="fas fa-cut me-2 text-success"> </i>
-                                Estética
-                            </a>
-                        </li>
-                        <li>
                             <a class="dropdown-item" href="/#calendario">
                                 <i
                                     class="fas fa-calendar-alt me-2 text-success"

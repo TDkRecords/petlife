@@ -1,22 +1,58 @@
 <script>
-    // No necesitas lógica adicional aquí, el widget se encarga
+    export let data;
+    import "$lib/assets/css/style.css";
 </script>
 
-<section class="bg-light py-4">
+<section class="py-5 bg-light">
     <div class="container">
-        <div class="d-flex justify-content-center">
-            <pet-scroller
-                type="[]"
-                age="[]"
-                limit="24"
-                status="adoptable"
-                petlisttitle=""
-                organization="NJ937,AZ663,IL947,KY527,WV217,PA1121,FL1568,ON591,FL1625,FL1579,FL1706,VA818,CA2748"
-                apibase="https://api.petfinder.com"
-                petfinderurl="https://www.petfinder.com"
-                accesstoken="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJtd1NmUDQ1SEpPckFSS0RkVGM1M3JGSjNHVTJIdnk0SUxVSGR5Y3NnNGpURzRCVHIzdCIsImp0aSI6InRTaTVIZ0ZHeXgwZWNaa3R4TjI1Sm9XTGNBTGc2WWNNcFE4aHhYaU4iLCJpYXQiOjE3NTIxNzY5ODAsIm5iZiI6MTc1MjE3Njk4MCwiZXhwIjo0OTA3ODUwNTgwLCJzdWIiOiIxOTU3MzM3NyIsInNjb3BlcyI6W119.avPLFOve6L8r3EqSbWDlXpnevESpUnnGfOO20zsQJzC0csyHnPjJD7jDoBktSJBSPLODdiIdftzX9ms7PJZKf2dbHo4c5y7LoRociLtWMG7aWVwRd1nOYGto3OLjTvev1hrpDTmujBYWuA9zWGN6lclbPcgkvcMWZ3CqoCkKPPYQJMvGjYj2d3FvNhTql9yoq3M53u--_8fhSXCZBW62tzb-yUe0qZs5pX5ftSqXSTs7mIlYcxFyYyqEnBmbLhNkCqW1d_RLnaPWos1NkA8W_gpwrnrMxwtggiavLwND-kPRe0T76ljdGBZ9PO1ZmIJoXILc8M_0wrpW-LpIkENhNA"
-            >
-            </pet-scroller>
-        </div>
+        <h2 class="text-success fw-bold mb-4 text-center">
+            <i class="fas fa-paw me-2"></i>Animales en adopción
+        </h2>
+
+        {#if data.pets.length > 0}
+            <div class="row g-4">
+                {#each [...new Map(data.pets.map( (p) => [p.id, p], )).values()] as pet (pet.id)}
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <img
+                                src={pet.photos[0]?.medium ||
+                                    "https://via.placeholder.com/400x300?text=Sin+foto"}
+                                class="card-img-top"
+                                alt={pet.name}
+                            />
+                            <div class="card-body text-center">
+                                <h5 class="fw-semibold">{pet.name}</h5>
+                                <p class="text-muted mb-1">
+                                    {pet.breeds.primary}
+                                </p>
+                                <p class="mb-0">
+                                    <i
+                                        class="fas fa-map-marker-alt text-success me-1"
+                                    ></i>{pet.contact.address.city}, {pet
+                                        .contact.address.state}
+                                </p>
+                            </div>
+                            <div
+                                class="card-footer bg-white border-0 text-center"
+                            >
+                                <a
+                                    href={pet.url}
+                                    target="_blank"
+                                    class="btn btn-success btn-sm fw-semibold"
+                                >
+                                    <i class="fas fa-external-link-alt me-1"
+                                    ></i> Ver más
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {/each}
+            </div>
+        {:else}
+            <div class="alert alert-warning text-center">
+                No se encontraron animales disponibles para adopción en este
+                momento.
+            </div>
+        {/if}
     </div>
 </section>
